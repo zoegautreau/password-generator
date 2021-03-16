@@ -9,7 +9,30 @@ var uppercaseConfirm = confirm("Would you like uppercase letters in your passwor
 
 var specialConfirm = confirm("Would you like special characters in your password? Select 'OK' for YES and 'Cancel' for NO");
 
-var lowercaseConfirm = confirm("Would you like numbers in your password? Select 'OK' for YES and 'Cancel' for NO");
+var numbersConfirm = confirm("Would you like numbers in your password? Select 'OK' for YES and 'Cancel' for NO");
+
+function checkAmount() {
+  amountPrompt;
+}
+
+function checkLowercase() {
+  lowercaseConfirm;
+}
+
+funtion checkUppercase() {
+  uppercaseConfirm;
+}
+
+funtion checkSpecial() {
+  specialConfirm;
+}
+
+function checkNumbers() {
+  numbersConfirm;
+}
+
+
+
 
 // Write password to the #password input
 function writePassword() {
