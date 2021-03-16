@@ -19,11 +19,11 @@ function checkLowercase() {
   lowercaseConfirm;
 }
 
-funtion checkUppercase() {
+function checkUppercase() {
   uppercaseConfirm;
 }
 
-funtion checkSpecial() {
+function checkSpecial() {
   specialConfirm;
 }
 
