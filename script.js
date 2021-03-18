@@ -32,7 +32,7 @@ var checkLowercase = " ";
 var checkNumbers = " ";
 var checkSpecial = " ";
 
-
+// Prompt and confirm function to check length of string and desired character types
 function checkAmountConfirm() {
   var string_length = prompt("How many characters would you like your password to have? *Must be more than 8, and less than 128*");
   if (string_length >= 8 && string_length <= 128) {
@@ -82,7 +82,7 @@ function upperLowerSpecialString(string_length) {
 // Upper + Numbers + Special characters option 3/4 
 function upperNumbersSpecialString(string_length) {
   randUpperNumbersSpecial;
-  var upperNumbersSpecial = "ABCDEFGHHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+  var upperNumbersSpecial = "ABCDEFGHHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
   for(var i, i = 0; i < string_length.length; i++){
     randUpperNumbersSpecial += upperNumbersSpecial.charAt(Math.floor(Math.random() * upperNumbersSpecial.length));
   }
