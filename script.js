@@ -41,7 +41,8 @@ function checkAmountConfirm() {
     checkNumbers = confirm("Would you like special characters in your password? Select 'OK' for YES and 'Cancel' for NO");
     checkSpecial = confirm("Would you like numbers in your password? Select 'OK' for YES and 'Cancel' for NO");
   } else {
-      alert("Length must be 8-128 characters");
+      alert("Length must be 8-128 characters.");
+      checkAmountConfirm();
   }
 }
 
@@ -94,11 +95,12 @@ function lowerNumbersSpecialString(string_length) {
 
 // Upper + Lower characters option 2/4 
 function upperLowerString(string_length) {
-  randUpperLower;
+  var randUpperLower = " ";
   var upperLower = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
   for(var i, i = 0; i < string_length; i++){
     randUpperLower += upperLower.charAt(Math.floor(Math.random() * upperLower.length));
   }
+  return randUpperLower
 }
 
 // Upper + Number characters option 2/4 
@@ -108,6 +110,7 @@ function upperNumbersString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randUpperNumbers += upperNumbers.charAt(Math.floor(Math.random() * upperNumbers.length));
   }
+  return upperLowerNumbers
 }
 
 // Upper + Special characters option 2/4 
@@ -245,6 +248,3 @@ function createPassword(string_length) {
         alert("You must select at least one character type!");
     }
 }
-
-checkAmountConfirm();
-createPassword();
