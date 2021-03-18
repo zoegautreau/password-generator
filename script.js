@@ -216,7 +216,7 @@ function createPassword(string_length) {
         upperNumberSpecialString();
         document.getElementById("password").innerHTML = upperNumbersSpecialString(string_length);
 
-    } else if (checkLowercase && checkNumbers && !checkUppercase && !checkSpecial) {
+    } else if (checkLowercase && checkNumbers && checkSpecial && !checkUppercase) {
         lowerNumbersSpecialString();
         document.getElementById("password").innerHTML = lowerNumbersSpecialString(string_length);
 
