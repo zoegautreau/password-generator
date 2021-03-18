@@ -44,6 +44,7 @@ function checkAmountConfirm() {
       alert("Length must be 8-128 characters.");
       checkAmountConfirm();
   }
+  createPassword(string_length);
 }
 
 // ALL PASSWORD POSSIBILITIES
@@ -55,6 +56,7 @@ function allCharactersString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randAllCharacters += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
   }
+  return randAllCharacters
 }
 
 // Upper + Lower + Number characters option 3/4
@@ -64,6 +66,7 @@ function upperLowerNumbersString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randUpperLowerNumbers += upperLowerNumbers.charAt(Math.floor(Math.random() * upperLowerNumbers.length));
   }
+  return randUpperLowerNumbers
 }
 
 // Upper + Lower + Special characters option 3/4 
@@ -73,6 +76,7 @@ function upperLowerSpecialString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randUpperLowerSpecial += upperLowerSpecial.charAt(Math.floor(Math.random() * upperLowerSpecial.length));
   }
+  return randUpperLowerSpecial
 }
 
 // Upper + Numbers + Special characters option 3/4 
@@ -82,6 +86,7 @@ function upperNumbersSpecialString(string_length) {
   for(var i, i = 0; i < string_length.length; i++){
     randUpperNumbersSpecial += upperNumbersSpecial.charAt(Math.floor(Math.random() * upperNumbersSpecial.length));
   }
+  return randUpperNumbersSpecial
 }
 
 // Lower + Number + Special characters option 3/4 
@@ -91,6 +96,7 @@ function lowerNumbersSpecialString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randLowerNumbersSpecial += lowerNumbersSpecial.charAt(Math.floor(Math.random() * lowerNumbersSpecial.length));
   }
+  return randLowerNumbersSpecial
 }
 
 // Upper + Lower characters option 2/4 
@@ -110,7 +116,7 @@ function upperNumbersString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randUpperNumbers += upperNumbers.charAt(Math.floor(Math.random() * upperNumbers.length));
   }
-  return upperLowerNumbers
+  return randUpperNumbers
 }
 
 // Upper + Special characters option 2/4 
@@ -120,6 +126,7 @@ function upperSpecialString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randUpperSpecial += upperSpecial.charAt(Math.floor(Math.random() * upperSpecial.length));
   }
+  return randUpperSpecial
 }
 
 // Lower + Number characters option 2/4 
@@ -129,6 +136,7 @@ function lowerNumbersString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randLowerNumbers += lowerNumbers.charAt(Math.floor(Math.random() * lowerNumbers.length));
   }
+  return randLowerNumbers
 }
 
 // Lower + Special characters option 2/4
@@ -138,6 +146,7 @@ function lowerSpecialString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randLowerSpecial += lowerSpecial.charAt(Math.floor(Math.random() * lowerSpecial.length));
   }
+  return randLowerSpecial
 }
 
 // Number + Special characters option 2/4
@@ -147,6 +156,7 @@ function numbersSpecialString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randNumbersSpecial += numbersSpecial.charAt(Math.floor(Math.random() * numbersSpecial.length));
   }
+  return randNumbersSpecial
 }
 
 // Uppercase characters option 1/4
@@ -156,6 +166,7 @@ function upperOnlyString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randUpperOnly += uppercaseOnly.charAt(Math.floor(Math.random() * uppercaseOnly.length));
   }
+  return randUpperOnly
 }
 
 // Lowercase characters option 1/4
@@ -165,6 +176,7 @@ function lowerOnlyString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randLowerOnly += lowercaseOnly.charAt(Math.floor(Math.random() * lowercaseOnly.length));
   }
+  return randLowerOnly
 }
 
 // Number characters option 1/4 
@@ -174,6 +186,7 @@ function numbersOnlyString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randNumbersOnly += numbersOnly.charAt(Math.floor(Math.random() * numbersOnly.length));
   }
+  return randNumbersOnly
 }
 
 // Special characters option 1/4
@@ -183,67 +196,69 @@ function specialOnlyString(string_length) {
   for(var i, i = 0; i < string_length; i++){
     randSpecialOnly += specialOnly.charAt(Math.floor(Math.random() * specialOnly.length));
   }
+  return randSpecialOnly
 }
 
 function createPassword(string_length) {
+  console.log(string_length)
   if (checkUppercase && checkLowercase && checkNumbers && checkSpecial) {
     allCharactersString();
-    document.getElementById("demo").innerHTML = allCharactersString(string_length)
+    document.getElementById("password").innerHTML = allCharactersString(string_length)
     } else if (checkUppercase && checkLowercase && checkNumbers && !checkSpecial) {
         upperLowerNumberString();
-        document.getElementById("demo").innerHTML = upperLowerNumbersString(string_length);
+        document.getElementById("password").innerHTML = upperLowerNumbersString(string_length);
 
     } else if (checkUppercase && checkNumbers && checkSpecial && !checkLowercase) {
         upperLowerSpecialString();
-        document.getElementById("demo").innerHTML = upperLowerSpecialString(string_length);
+        document.getElementById("password").innerHTML = upperLowerSpecialString(string_length);
 
     } else if (checkUppercase && checkNumbers && checkSpecial && !checkLowercase) {
         upperNumberSpecialString();
-        document.getElementById("demo").innerHTML = upperNumbersSpecialString(string_length);
+        document.getElementById("password").innerHTML = upperNumbersSpecialString(string_length);
 
     } else if (checkLowercase && checkNumbers && !checkUppercase && !checkSpecial) {
         lowerNumbersSpecialString();
-        document.getElementById("demo").innerHTML = lowerNumbersSpecialString(string_length);
+        document.getElementById("password").innerHTML = lowerNumbersSpecialString(string_length);
 
     } else if (checkUppercase && checkLowercase && !checkNumbers && !checkSpecial) {
         upperLowerString();
-        document.getElementById("demo").innerHTML = upperLowerString(string_length);
+        document.getElementById("password").innerHTML = upperLowerString(string_length);
 
     } else if (checkUppercase && checkNumbers && !checkLowercase && !checkSpecial) {
         upperNumbersString();
-        document.getElementById("demo").innerHTML = upperNumbersString(string_length);
+        document.getElementById("password").innerHTML = upperNumbersString(string_length);
 
     } else if (checkUppercase && checkSpecial && !checkLowercase && !checkNumbers) {
         upperSpecialString();
-        document.getElementById("demo").innerHTML = upperSpecialString(string_length);
+        document.getElementById("password").innerHTML = upperSpecialString(string_length);
 
     } else if (checkLowercase && checkNumbers && !checkUppercase && !checkSpecial) {
         lowerNumbersString();
-        document.getElementById("demo").innerHTML = lowerNumberString(string_length);
+        document.getElementById("password").innerHTML = lowerNumberString(string_length);
 
     } else if (checkLowercase && checkSpecial && !checkUppercase && !checkNumbers) {
         lowerSpecialString();
-        document.getElementById("demo").innerHTML = lowerSpecialString(string_length);
+        document.getElementById("password").innerHTML = lowerSpecialString(string_length);
 
     } else if (checkNumbers + checkSpecial && !checkUppercase && !checkLowercase) {
         numbersSpecialString();
-        document.getElementById("demo").innerHTML = numberSpecialString(string_length);
+        document.getElementById("password").innerHTML = numbersSpecialString(string_length);
 
     } else if (checkUppercase && !checkLowercase && !checkNumbers && !checkSpecial) {
         upperOnlyString();
-        document.getElementById("demo").innerHTML = upperOnlyString(string_length);
+        document.getElementById("password").innerHTML = upperOnlyString(string_length);
 
     } else if (checkLowercase && !checkUppercase && !checkNumbers && !checkSpecial) {
         lowerOnlyString();
-        document.getElementById("demo").innerHTML = lowerOnlyString(string_length);
+        document.getElementById("password").innerHTML = lowerOnlyString(string_length);
 
     } else if (checkNumbers && !checkUppercase && !checkLowercase && !checkSpecial) {
         numbersOnlyString();
-        document.getElementById("demo").innerHTML = numbersOnlyString(string_length);
+        document.getElementById("password").innerHTML = numbersOnlyString(string_length);
 
     } else if (checkSpecial && !checkUppercase && !checkLowercase && !checkNumbers) {
         specialOnlyString();
-        document.getElementById("demo").innerHTML = specialOnlyString(string_length);
+        document.getElementById("password").innerHTML = specialOnlyString(string_length);
     } else {
         alert("You must select at least one character type!");
     }
