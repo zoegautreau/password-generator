@@ -241,4 +241,3 @@ if (checkUppercase && checkLowercase && checkNumbers && checkSpecial) {
   } else {
       alert("You must select at least one character type!");
   }
-}
