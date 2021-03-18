@@ -1,15 +1,15 @@
 // Assignment Code
-//var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
-//function writePassword() {
-  //var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
-  //passwordText.value = password;
-//}
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
 //random variables
 var randAllCharacters = " ";
@@ -28,15 +28,18 @@ var randLowerNumbers = " ";
 var randLowerSpecial = " ";
 var randNumbersSpecial = " ";
 
+
+
 function checkAmount() {
   var string_length = prompt("How many characters would you like your password to have? *Must be more than 8, and less than 128*");
-  if (string_length >= 8 || string_length <= 128) {
+  if (string_length >= 8 && string_length <= 128) {
     checkUppercase = confirm("Would you like lowercase letters in your password? Select 'OK' for YES and 'Cancel' for NO");
     checkLowercase = confirm("Would you like uppercase letters in your password? Select 'OK' for YES and 'Cancel' for NO");
     checkNumbers = confirm("Would you like special characters in your password? Select 'OK' for YES and 'Cancel' for NO");
     checkSpecial = confirm("Would you like numbers in your password? Select 'OK' for YES and 'Cancel' for NO")
   } else {
     alert("Length must be 8-128 characters");
+    checkAmount();
   }
 }
 
@@ -177,58 +180,71 @@ function specialOnlyString(string_length) {
   }
 }
 
-// IF statements
-
-function password() {
+function createPassword(string_length) {
   if (checkUppercase && checkLowercase && checkNumbers && checkSpecial) {
-    allCharactersString;
-    document.getElementById("password").innerHTML = allCharactersString(string_length)
+    allCharactersString();
+    document.getElementById("password").innerHTML = allCharactersString(string_length);
+    writePassword();
     } else if (checkUppercase && checkLowercase && checkNumbers && !checkSpecial) {
-        upperLowerNumberString;
-        document.getElementById("password").innerHTML = upperLowerNumbersString(string_length)
+        upperLowerNumberString();
+        document.getElementById("password").innerHTML = upperLowerNumbersString(string_length);
+        writePassword();
     } else if (checkUppercase && checkNumbers && checkSpecial && !checkLowercase) {
-        upperLowerSpecialString;
-        document.getElementById("password").innerHTML = upperLowerSpecialString(string_length)
+        upperLowerSpecialString();
+        document.getElementById("password").innerHTML = upperLowerSpecialString(string_length);
+        writePassword();
     } else if (checkUppercase && checkNumbers && checkSpecial && !checkLowercase) {
-        upperNumberSpecialString;
-        document.getElementById("password").innerHTML = upperNumbersSpecialString(string_length)
+        upperNumberSpecialString();
+        document.getElementById("password").innerHTML = upperNumbersSpecialString(string_length);
+        writePassword();
     } else if (checkLowercase && checkNumbers && !checkUppercase && !checkSpecial) {
-        lowerNumbersSpecialString;
-        document.getElementById("password").innerHTML = lowerNumbersSpecialString(string_length)
+        lowerNumbersSpecialString();
+        document.getElementById("password").innerHTML = lowerNumbersSpecialString(string_length);
+        writePassword();
     } else if (checkUppercase && checkLowercase && !checkNumbers && !checkSpecial) {
-        upperLowerString;
-        document.getElementById("password").innerHTML = upperLowerString(string_length)
+        upperLowerString();
+        document.getElementById("password").innerHTML = upperLowerString(string_length);
+        writePassword();
     } else if (checkUppercase && checkNumbers && !checkLowercase && !checkSpecial) {
-        upperNumbersString;
-        document.getElementById("password").innerHTML = upperNumbersString(string_length)
+        upperNumbersString();
+        document.getElementById("password").innerHTML = upperNumbersString(string_length);
+        writePassword();
     } else if (checkUppercase && checkSpecial && !checkLowercase && !checkNumbers) {
-        upperSpecialString;
-        document.getElementById("password").innerHTML = upperSpecialString(string_length)
+        upperSpecialString();
+        document.getElementById("password").innerHTML = upperSpecialString(string_length);
+        writePassword();
     } else if (checkLowercase && checkNumbers && !checkUppercase && !checkSpecial) {
-        lowerNumbersString;
-        document.getElementById("password").innerHTML = lowerNumberString(string_length)
+        lowerNumbersString();
+        document.getElementById("password").innerHTML = lowerNumberString(string_length);
+        writePassword();
     } else if (checkLowercase && checkSpecial && !checkUppercase && !checkNumbers) {
-        lowerSpecialString;
-        document.getElementById("password").innerHTML = lowerSpecialString(string_length)
+        lowerSpecialString();
+        document.getElementById("password").innerHTML = lowerSpecialString(string_length);
+        writePassword();
     } else if (checkNumbers + checkSpecial && !checkUppercase && !checkLowercase) {
-        numbersSpecialString;
-        document.getElementById("password").innerHTML = numberSpecialString(string_length)
+        numbersSpecialString();
+        document.getElementById("password").innerHTML = numberSpecialString(string_length);
+        writePassword();
     } else if (checkUppercase && !checkLowercase && !checkNumbers && !checkSpecial) {
-        upperOnlyString;
-        document.getElementById("password").innerHTML = upperOnlyString(string_length)
+        upperOnlyString();
+        document.getElementById("password").innerHTML = upperOnlyString(string_length);
+        writePassword();
     } else if (checkLowercase && !checkUppercase && !checkNumbers && !checkSpecial) {
-        lowerOnlyString;
-        document.getElementById("password").innerHTML = lowerOnlyString(string_length)
+        lowerOnlyString();
+        document.getElementById("password").innerHTML = lowerOnlyString(string_length);
+        writePassword();
     } else if (checkNumbers && !checkUppercase && !checkLowercase && !checkSpecial) {
-        numbersOnlyString;
-        document.getElementById("password").innerHTML = numbersOnlyString(string_length)
+        numbersOnlyString();
+        document.getElementById("password").innerHTML = numbersOnlyString(string_length);
+        writePassword();
     } else if (checkSpecial && !checkUppercase && !checkLowercase && !checkNumbers) {
-        specialOnlyString;
-        document.getElementById("password").innerHTML = specialOnlyString(string_length)
+        specialOnlyString();
+        document.getElementById("password").innerHTML = specialOnlyString(string_length);
+        writePassword();
     } else {
         alert("You must select at least one character type!");
     }
 }
 
-checkAmount;
-password;
+checkAmount();
+createPassword();
