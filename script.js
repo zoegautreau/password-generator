@@ -261,5 +261,6 @@ function createPassword(string_length) {
         document.getElementById("password").innerHTML = specialOnlyString(string_length);
     } else {
         alert("You must select at least one character type!");
+        checkAmountConfirm();
     }
 }
