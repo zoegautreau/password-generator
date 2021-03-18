@@ -36,8 +36,8 @@ var checkSpecial = " ";
 function checkAmountConfirm() {
   var string_length = prompt("How many characters would you like your password to have? *Must be more than 8, and less than 128*");
   if (string_length >= 8 && string_length <= 128) {
-    checkLowercase = confirm("Would you like uppercase letters in your password? Select 'OK' for YES and 'Cancel' for NO");
-    checkUppercase = confirm("Would you like lowercase letters in your password? Select 'OK' for YES and 'Cancel' for NO");
+    checkUppercase = confirm("Would you like uppercase letters in your password? Select 'OK' for YES and 'Cancel' for NO");
+    checkLowercase = confirm("Would you like lowercase letters in your password? Select 'OK' for YES and 'Cancel' for NO");
     checkNumbers = confirm("Would you like numbers in your password? Select 'OK' for YES and 'Cancel' for NO");
     checkSpecial = confirm("Would you like special characters in your password? Select 'OK' for YES and 'Cancel' for NO");
   } else {
