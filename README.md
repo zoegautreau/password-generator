@@ -17,3 +17,5 @@
         <li>Randomly select string the length that the user provides</li>
         <li>Generate a password to the display box in the HTML.</li>
     </ul>
+<h4>Screenshot of and link to deployed application</h4>
+<img src="scree">
