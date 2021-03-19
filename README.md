@@ -13,8 +13,8 @@
                     <li>Numbers</li>
                     <li>Special characters</li>
                 </ul>
-        <li>Run the various options based on which messages were confirmed (true)</li>
-        <li>Randomly select string the length that the user provides</li>
+        <li>Run the various options based on which messages were confirmed.</li>
+        <li>Randomly select string the length that the user provides.</li>
         <li>Generate a password to the display box in the HTML.</li>
     </ul>
 <h4>Link to and screenshot of deployed application</h4>
