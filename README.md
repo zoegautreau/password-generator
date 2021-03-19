@@ -17,6 +17,6 @@
         <li>Randomly select string the length that the user provides</li>
         <li>Generate a password to the display box in the HTML.</li>
     </ul>
-<h4>Screenshot of and link to deployed application</h4>
-<img src="screenshotPasswordGenerator.png">
+<h4>Link to and screenshot of deployed application</h4>
 <link href="https://zoegautreau.github.io/password-generator/">
+<img src="screenshotPasswordGenerator.png">
