@@ -18,5 +18,5 @@
         <li>Generate a password to the display box in the HTML.</li>
     </ul>
 <h4>Link to and screenshot of deployed application</h4>
-<link href="https://zoegautreau.github.io/password-generator/">
+<a href="https://zoegautreau.github.io/password-generator/">My Deployed Password Generator</a>
 <img src="screenshotPasswordGenerator.png">
